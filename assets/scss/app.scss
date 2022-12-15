@@ -242,3 +242,38 @@ html {
     backdrop-filter: blur(1rem);
   }
 }
+// ===========Payment Mathod Code=============
+.payment-suport-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  @include gap;
+  place-items: center;
+}
+// ===========Notice Design Code=============
+.notice-content {
+  ul {
+    li {
+      &::before {
+        content: "\f05a";
+        font-family: "Font Awesome 6 Free";
+        font-weight: bold;
+        color: $clr-deep-skyblue;
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
+// ===========Footer Code=============
+
+.footer-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 425px) {
+  .footer-wraper {
+    flex-direction: column-reverse;
+  }
+}
