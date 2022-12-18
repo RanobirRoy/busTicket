@@ -3,7 +3,7 @@
 @import "mixin";
 @import "variable";
 @import "global_classes";
-@import "component_code";
+// @import "component_code";
 
 // ===========General Code Start=============
 body {
@@ -260,6 +260,235 @@ html {
         color: $clr-deep-skyblue;
         display: inline-block;
         margin-right: 0.5em;
+      }
+    }
+  }
+}
+// ===========Step 1 Code=============
+.step-1 {
+  background-color: $clr-skyblue;
+}
+.search-form-2 {
+  .search-form-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    @include gap;
+    select,
+    input {
+      flex: 1;
+      outline: none;
+      background-color: $clr-white;
+      border: 1px solid $clr-deep-skyblue;
+      border-radius: 5px;
+      color: $clr-deep-skyblue;
+      padding: 0.5rem 0.5rem;
+      appearance: none;
+    }
+  }
+}
+// ===========Step 2 Code=============
+.step-2 {
+  .step-2-content {
+    overflow: auto;
+    table {
+      width: max(100%, 800px);
+      thead tr {
+        background: $clr-skyblue;
+        th {
+          padding: 0.5rem 0;
+          text-align: center;
+          font-family: $ff-Nunito-Sans;
+        }
+      }
+      tbody tr {
+        background: #eee;
+        td {
+          text-align: center;
+          padding: 0.2rem 0;
+          font-family: $ff-Nunito-Sans;
+          .td-icon {
+            color: $clr-orange;
+          }
+        }
+      }
+    }
+  }
+}
+// ===========Step 2 Code=============
+.step-3-content {
+  .seats {
+    flex: 4;
+    .seats-wraper {
+      border: 2px solid $clr-deep-skyblue;
+      padding: 0.5rem;
+      border-radius: 10px;
+      .seat-status-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        .seat-info-type {
+          width: 100%;
+          display: flex;
+          & > * {
+            flex: 1;
+            text-align: center;
+            padding: 0.2rem;
+          }
+        }
+        .seat-status-color {
+          width: 100%;
+          display: flex;
+          border-radius: 10px;
+          border: 2px solid $clr-deep-skyblue;
+          & > * {
+            flex: 1;
+            text-align: center;
+            background-color: red;
+            padding: 1rem;
+          }
+          .available-color {
+            background-color: $clr-white;
+            border-radius: 10px 0 0 10px;
+          }
+          .booked-color {
+            background-color: #a7a7a7;
+          }
+          .discount-color {
+            background-color: $clr-orange;
+            border-radius: 0 7px 7px 0;
+          }
+        }
+      }
+      table {
+        width: 100%;
+        td {
+          text-align: center;
+        }
+        thead {
+          tr {
+            // background-color: skyblue;
+            td {
+              span {
+                display: grid;
+                place-items: center;
+                padding: 1rem 0;
+                border-radius: 10px;
+                background-color: skyblue;
+              }
+            }
+          }
+        }
+        tbody {
+          .seats-row {
+            td {
+              cursor: pointer;
+              user-select: none;
+              &[aria-details="none"] label span {
+                opacity: 0;
+                cursor: pointer;
+              }
+              &[seat-status="booked"] label span {
+                background-color: #a7a7a7;
+                cursor: not-allowed;
+              }
+              label {
+                span {
+                  display: grid;
+                  place-items: center;
+                  border: 1px solid blue;
+                  padding: 1rem 0;
+                  border-radius: 10px;
+                }
+                input[type="checkbox"] {
+                  display: none;
+                  &:checked + span {
+                    background-color: red;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .ticket-info {
+    flex: 8;
+    .ticket-info-wraper {
+      border: 1px solid $clr-deep-skyblue;
+      border-radius: 10px;
+      padding: 1rem;
+      background-color: #eee;
+      .price-info {
+        .price-info-table {
+          width: 100%;
+          margin: 1rem 0;
+          thead {
+            tr {
+              th {
+                background-color: $clr-skyblue;
+              }
+            }
+          }
+          tbody {
+            tr {
+              td {
+                text-align: center;
+                background-color: #e1e1e1;
+                &[td-type="null"] {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .personal-info {
+        .personal-info-form {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          .personal-field {
+            display: flex;
+            gap: 1rem;
+            .personal-input {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              gap: 0.3rem;
+              input,
+              select {
+                width: 100%;
+                outline: none;
+                border: 1px solid $clr-deep-skyblue;
+                border-radius: 5px;
+              }
+              input {
+                padding: 0.4rem 0 0.4rem 0.5rem;
+                &:focus {
+                  outline: 2px solid $clr-orange;
+                  border: none;
+                }
+              }
+              select {
+                padding: 0.4rem 0.5rem;
+                // appearance: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 426px) {
+  .personal-info {
+    .personal-info-form {
+      .personal-field {
+        flex-direction: column;
       }
     }
   }

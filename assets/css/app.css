@@ -179,6 +179,12 @@ svg {
 @media (max-width: 50em) {
   .even-columns {
     -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .even-columns[data-type=even-columns-reverse] {
+    -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
@@ -272,96 +278,20 @@ svg {
   color: #fff;
 }
 
-.section-heading {
-  text-align: center;
+.btn[data-type=white] {
+  background: #0160d6;
+  color: #fff;
+  border-radius: 100vmax;
 }
 
-.destination-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: clamp(0.5rem, 0.5rem + 2vw, 1.5rem);
-  width: min(25rem, 100%);
-}
-.destination-info select {
-  padding: 0.5rem;
-  outline: none;
-  border: none;
-  width: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.destination-info input {
-  outline: none;
-  border: none;
-  padding: 0 0.5rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.destination-info input[data-type=normal] {
-  padding: clamp(0.3rem, 0.2rem + 0.5vw, 0.35rem) clamp(1rem, 0.5rem + 1.5vw, 1.5rem);
-  outline: none;
-  border: 1px solid #fff;
-  background: transparent;
-  font-size: clamp(1.1rem, 0.8rem + 1.5vw, 1.2rem);
-  font-family: "Nunito Sans", sans-serif;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 2px;
-  -webkit-transition: 200ms ease;
-  transition: 200ms ease;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.destination-info input[data-type=normal]:hover {
+.btn[data-type=white]:hover {
   background: #fff;
-  border: 1px solid transparent;
+  border: 1px solid #0160d6;
   color: #0160d6;
 }
-.destination-info input[data-type=reverse] {
-  padding: clamp(0.3rem, 0.2rem + 0.5vw, 0.35rem) clamp(1rem, 0.5rem + 1.5vw, 1.5rem);
-  outline: none;
-  border: 1px solid #fff;
-  background: transparent;
-  font-size: clamp(1.1rem, 0.8rem + 1.5vw, 1.2rem);
-  font-family: "Nunito Sans", sans-serif;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 2px;
-  -webkit-transition: 200ms ease;
-  transition: 200ms ease;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.destination-info input[data-type=reverse]:hover {
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-}
-.destination-info .destination-from-to,
-.destination-info .destination-date-type {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: clamp(0.5rem, 0.5rem + 2vw, 1.5rem);
-}
-.destination-info .destination-from-to > *,
-.destination-info .destination-date-type > * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+
+.section-heading {
+  text-align: center;
 }
 
 body {
@@ -671,6 +601,246 @@ html {
   margin-right: 0.5em;
 }
 
+.step-1 {
+  background-color: #b9ebff;
+}
+
+.search-form-2 .search-form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: clamp(0.5rem, 0.5rem + 2vw, 1.5rem);
+}
+.search-form-2 .search-form-content select,
+.search-form-2 .search-form-content input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #0160d6;
+  border-radius: 5px;
+  color: #0160d6;
+  padding: 0.5rem 0.5rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.step-2 .step-2-content {
+  overflow: auto;
+}
+.step-2 .step-2-content table {
+  width: max(100%, 800px);
+}
+.step-2 .step-2-content table thead tr {
+  background: #b9ebff;
+}
+.step-2 .step-2-content table thead tr th {
+  padding: 0.5rem 0;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+}
+.step-2 .step-2-content table tbody tr {
+  background: #eee;
+}
+.step-2 .step-2-content table tbody tr td {
+  text-align: center;
+  padding: 0.2rem 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+.step-2 .step-2-content table tbody tr td .td-icon {
+  color: #f13b13;
+}
+
+.step-3-content .seats {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+.step-3-content .seats .seats-wraper {
+  border: 2px solid #0160d6;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.step-3-content .seats .seats-wraper .seat-status-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.step-3-content .seats .seats-wraper .seat-status-info .seat-info-type {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.step-3-content .seats .seats-wraper .seat-status-info .seat-info-type > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  padding: 0.2rem;
+}
+.step-3-content .seats .seats-wraper .seat-status-info .seat-status-color {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  border: 2px solid #0160d6;
+}
+.step-3-content .seats .seats-wraper .seat-status-info .seat-status-color > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  background-color: red;
+  padding: 1rem;
+}
+.step-3-content .seats .seats-wraper .seat-status-info .seat-status-color .available-color {
+  background-color: #fff;
+  border-radius: 10px 0 0 10px;
+}
+.step-3-content .seats .seats-wraper .seat-status-info .seat-status-color .booked-color {
+  background-color: #a7a7a7;
+}
+.step-3-content .seats .seats-wraper .seat-status-info .seat-status-color .discount-color {
+  background-color: #f13b13;
+  border-radius: 0 7px 7px 0;
+}
+.step-3-content .seats .seats-wraper table {
+  width: 100%;
+}
+.step-3-content .seats .seats-wraper table td {
+  text-align: center;
+}
+.step-3-content .seats .seats-wraper table thead tr td span {
+  display: grid;
+  place-items: center;
+  padding: 1rem 0;
+  border-radius: 10px;
+  background-color: skyblue;
+}
+.step-3-content .seats .seats-wraper table tbody .seats-row td {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.step-3-content .seats .seats-wraper table tbody .seats-row td[aria-details=none] label span {
+  opacity: 0;
+  cursor: pointer;
+}
+.step-3-content .seats .seats-wraper table tbody .seats-row td[seat-status=booked] label span {
+  background-color: #a7a7a7;
+  cursor: not-allowed;
+}
+.step-3-content .seats .seats-wraper table tbody .seats-row td label span {
+  display: grid;
+  place-items: center;
+  border: 1px solid blue;
+  padding: 1rem 0;
+  border-radius: 10px;
+}
+.step-3-content .seats .seats-wraper table tbody .seats-row td label input[type=checkbox] {
+  display: none;
+}
+.step-3-content .seats .seats-wraper table tbody .seats-row td label input[type=checkbox]:checked + span {
+  background-color: red;
+}
+.step-3-content .ticket-info {
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+}
+.step-3-content .ticket-info .ticket-info-wraper {
+  border: 1px solid #0160d6;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #eee;
+}
+.step-3-content .ticket-info .ticket-info-wraper .price-info .price-info-table {
+  width: 100%;
+  margin: 1rem 0;
+}
+.step-3-content .ticket-info .ticket-info-wraper .price-info .price-info-table thead tr th {
+  background-color: #b9ebff;
+}
+.step-3-content .ticket-info .ticket-info-wraper .price-info .price-info-table tbody tr td {
+  text-align: center;
+  background-color: #e1e1e1;
+}
+.step-3-content .ticket-info .ticket-info-wraper .price-info .price-info-table tbody tr td[td-type=null] {
+  opacity: 0;
+}
+.step-3-content .ticket-info .ticket-info-wraper .personal-info .personal-info-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+.step-3-content .ticket-info .ticket-info-wraper .personal-info .personal-info-form .personal-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+.step-3-content .ticket-info .ticket-info-wraper .personal-info .personal-info-form .personal-field .personal-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  gap: 0.3rem;
+}
+.step-3-content .ticket-info .ticket-info-wraper .personal-info .personal-info-form .personal-field .personal-input input,
+.step-3-content .ticket-info .ticket-info-wraper .personal-info .personal-info-form .personal-field .personal-input select {
+  width: 100%;
+  outline: none;
+  border: 1px solid #0160d6;
+  border-radius: 5px;
+}
+.step-3-content .ticket-info .ticket-info-wraper .personal-info .personal-info-form .personal-field .personal-input input {
+  padding: 0.4rem 0 0.4rem 0.5rem;
+}
+.step-3-content .ticket-info .ticket-info-wraper .personal-info .personal-info-form .personal-field .personal-input input:focus {
+  outline: 2px solid #f13b13;
+  border: none;
+}
+.step-3-content .ticket-info .ticket-info-wraper .personal-info .personal-info-form .personal-field .personal-input select {
+  padding: 0.4rem 0.5rem;
+}
+
+@media (max-width: 426px) {
+  .personal-info .personal-info-form .personal-field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .footer-wraper {
   display: -webkit-box;
   display: -ms-flexbox;

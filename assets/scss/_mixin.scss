@@ -19,6 +19,12 @@
   color: $clr-deep-skyblue;
   border-radius: 100vmax;
 }
+@mixin button-style3 {
+  background: $clr-deep-skyblue;
+  color: $clr-white;
+  border-radius: 100vmax;
+}
+
 @mixin button-style-hover {
   background: $clr-white;
   border: 1px solid transparent;
@@ -28,4 +34,9 @@
   background: transparent;
   border: 1px solid $clr-white;
   color: $clr-white;
+}
+@mixin button-style-hover3 {
+  background: $clr-white;
+  border: 1px solid $clr-deep-skyblue;
+  color: $clr-deep-skyblue;
 }

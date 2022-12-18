@@ -91,6 +91,9 @@
 }
 @media (max-width: 50em) {
   .even-columns {
+    flex-direction: column;
+  }
+  .even-columns[data-type="even-columns-reverse"] {
     flex-direction: column-reverse;
   }
 }
@@ -139,12 +142,21 @@
 .btn:hover {
   @include button-style-hover;
 }
+
 .btn[data-type="reverse"] {
   @include button-style2;
 }
 .btn[data-type="reverse"]:hover {
   @include button-style-hover2;
 }
+
+.btn[data-type="white"] {
+  @include button-style3;
+}
+.btn[data-type="white"]:hover {
+  @include button-style-hover3;
+}
+
 .section-heading {
   text-align: center;
 }
