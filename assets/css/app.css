@@ -203,6 +203,11 @@ svg {
           padding-block-start: 2rem;
 }
 
+.section-padding-bottom {
+  -webkit-padding-after: 2rem;
+          padding-block-end: 2rem;
+}
+
 .btn {
   padding: clamp(0.3rem, 0.2rem + 0.5vw, 0.35rem) clamp(1rem, 0.5rem + 1.5vw, 1.5rem);
   outline: none;
@@ -290,8 +295,39 @@ svg {
   color: #0160d6;
 }
 
-.section-heading {
-  text-align: center;
+.section-heading h1 {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  cursor: default;
+}
+.section-heading h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #0160d6;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 200ms ease-in;
+  transition: -webkit-transform 200ms ease-in;
+  transition: transform 200ms ease-in;
+  transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
+}
+.section-heading h1:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.section-heading[data-float=center] h1 {
+  margin-inline: auto;
 }
 
 body {
@@ -599,10 +635,6 @@ html {
   color: #0160d6;
   display: inline-block;
   margin-right: 0.5em;
-}
-
-.step-1 {
-  background-color: #b9ebff;
 }
 
 .search-form-2 .search-form-content {
